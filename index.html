@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<center>
+      <h1><img height="120" src="trump_run1.png" id="2"></h1>
+    <h1 id="1">0:0:0</h1>
+<button onclick="p1()"> "play"</button>
+</center>
+  <script>
+      kadr=0
+      minuta=0
+      score=0
+      hours = 0
+      timer=undefined
+      function p1() {
+          clearInterval(timer)
+          timer=setInterval(function  () {
+              score++
+              kadr++
+              document.getElementById('1').innerHTML = floor_time()
+          if (kadr==0){
+              document.getElementById('2').src="trump_run1.png"
+          }
+           if (kadr==1){
+                      document.getElementById('2').src="trump_run2.png"
+                  }
+           if (kadr==2){
+                      document.getElementById('2').src="trump_run3.png"
+                  }
+           if (kadr==3){
+                      document.getElementById('2').src="trump_run4.png"
+                  }
+           if (kadr==4){
+                      document.getElementById('2').src="trump_run5.png"
+                  }
+           if (kadr==5){
+              document.getElementById('2').src="trump_run6.png"
+          }
+           if (kadr==6){
+              document.getElementById('2').src="trump_run1.png"
+          }
+           if (score>5){
+               score=0
+               kadr=0
+           }
+          },100)
+      }
+      function floor_time() {
+          if (score == 60){
+              minuta++
+              score=1
+          }
+          if (minuta == 60){
+              hours++
+              minuta = 0
+          }
+        return hours + ":" + minuta + ":" + score
+
+
+      }
+  </script>
+</body>
+</html>
